@@ -1,13 +1,4 @@
-import { useEffect, useState } from 'react';
-import { initCoins } from '../services/manageCoins';
-
-export default function CoinDisplay() {
-  const [coin, setCoin] = useState(0);
-
-  useEffect(() => {
-    let i = initCoins();
-    setCoin(i);
-  },[]);
+export default function CoinDisplay({coin}:{coin:number}) {
 
   return (
     <div id='coins' className='flex flex-row gap-1 font-semibold pl-2'>

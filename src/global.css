@@ -48,3 +48,7 @@ html,body
   top: 50vh;
   left: 50vw;
 }
+
+a {
+  text-decoration-line: underline;
+}

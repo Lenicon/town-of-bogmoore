@@ -5,7 +5,11 @@ export default {
     "./src/**/*.tsx",
   ],
   theme: {
-    extend: {},
+    extend: {
+      'textColor':{
+        'thief':'#7f1d1d'
+      }
+    },
   },
   plugins: [],
 }

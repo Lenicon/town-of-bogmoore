@@ -1,4 +1,6 @@
 import secureLocalStorage from "react-secure-storage";
+import { setCoins } from "./manageCoins";
+import { itemlib } from "../config/itemsLibrary";
 
 
 const reloadWindow = () => {
@@ -7,9 +9,11 @@ const reloadWindow = () => {
   return;
 }
 
-export const initialize = () => {
-  if (!secureLocalStorage.getItem('inv')){
-    secureLocalStorage.setItem('inv', {});
+export const initialize = (secretID:string) => {
+  if (!secureLocalStorage.getItem('inv') || !secureLocalStorage.getItem('stat') || secureLocalStorage.getItem('inv')['secretID'] != secureLocalStorage.getItem('stat')['secretID']){
+    secureLocalStorage.setItem('inv', {'secretID':secretID, 'flyjar':10, 'mysteryGift':5});
+
+    setCoins(0);
   }
 }
 
@@ -24,7 +28,6 @@ export const setItem = (key: string, value: any) => {
   let inv: any = secureLocalStorage.getItem('inv');
   if (inv) {
     inv[key] = value;
-    // setInv(inv);
     secureLocalStorage.setItem('inv', inv);
     reloadWindow();
   }
@@ -42,7 +45,8 @@ export const addItem = (key: string, amount: any) => {
 
     inv[key] = inv[key] + amount
 
-    // setInv(inv);
+    alert(`Gained ${itemlib[key]?.name} x${amount}!`);
+
     secureLocalStorage.setItem('inv', inv);
     return reloadWindow()
   }
