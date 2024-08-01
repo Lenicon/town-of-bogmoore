@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: NotoColorEmoji;
+  src: url('./assets/fonts/NotoColorEmoji.ttf');
+}
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,body
+{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.grass-bg {
+  background: linear-gradient(45deg , #f7f3d3 10%,transparent 11%, transparent 89% , #f7f3d3 90%),linear-gradient(135deg , #f7f3d3 10%,transparent 11%, transparent 89% , #f7f3d3 90%),radial-gradient(circle, transparent 25%, #ffffff  26%),linear-gradient(0deg, transparent 44%, #f7f3d3 45%, #f7f3d3 55%, transparent 56%), linear-gradient(90deg, transparent 44%, #f7f3d3 45%, #f7f3d3 55%, transparent 56%);
+        background-size: 6em 6em;
+        background-color: #ffffff;
+        opacity: 1
+}
+
+.fixed-center {
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+}
+
+.fixed-center-emoji {
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+}
