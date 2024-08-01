@@ -1,6 +1,3 @@
-
-
-import { useEffect } from 'react';
 import TopBar from '../components/TopBar';
 import * as coin from '../services/manageCoins';
 import * as inv from '../services/manageInventory';

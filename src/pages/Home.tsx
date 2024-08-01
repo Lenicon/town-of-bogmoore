@@ -11,7 +11,7 @@ export default function Home() {
 
       <div id='title' className='text-center items-center flex flex-col justify-center pt-[5rem]'>
         <span className='text-xl'>Hi, wanna see something nice?</span>
-        <span className='text-2xl'>Welcome to the <strong>Town of Bogmore</strong></span>
+        <span className='text-2xl'>Welcome to the <strong>Town of Bogmoore</strong></span>
       </div>
 
       <div className='flex flex-wrap justify-center items-center gap-5 text-center'>
