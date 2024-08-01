@@ -42,12 +42,12 @@ export default function Doghouse() {
         <div aria-label='collision' className='bg-red-400 size-[25rem] rounded-full fixed-center' onMouseOver={() => {setDogState(2);}} />
         
         {dogState==2?<div id='bark' className='font-bold fixed fixed-center z-[6]'>
-          <p className='-translate-y-20'>BARK!</p>
+          <p className='-translate-y-20 text-white'>BARK!</p>
           <p className='-rotate-45 -translate-x-16 -translate-y-[4.5rem]'>BARK!</p>
           <p className='rotate-45 translate-x-16 -translate-y-[6rem]'>BARK!</p>
         </div>:<></>}
 
-        {dogState==1?<div id='gurr' className='font-bold fixed fixed-center z-[6]'><p className='-translate-y-24'>grrr....</p></div>:<></>}
+        {dogState==1?<div id='gurr' className='font-bold fixed fixed-center z-[6]'><p className='translate-y-2 -translate-x-14'>grrr....</p></div>:<></>}
 
         <i id='hut' className='twa twa-hut text-[20rem] fixed-center-emoji -translate-x-[60%] -translate-y-[110%]' />
         <button id='dog'>
