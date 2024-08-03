@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from 'react';
 import CoinDisplay from './CoinDisplay'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { initialize as initStat } from '../services/manageStatus';
 import { initialize as initInv } from '../services/manageInventory';
 import { initialize as initCoin } from '../services/manageCoins';
@@ -10,6 +10,7 @@ import secureLocalStorage from 'react-secure-storage';
 export default function TopBar() {
   const [coin, setCoin] = useState(0);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(()=>{
     const start = async() => {
@@ -23,10 +24,15 @@ export default function TopBar() {
     
   },[])
 
+
   return (
-    <div className='flex flex-row gap-2 select-none fixed top-5 right-7'>
-      {location.pathname!='/'?<a title='Back to Entrance' href='/'>
+    <div className='flex flex-row gap-3 select-none fixed top-5 right-7'>
+      {location.pathname!='/'?<a title='Go to Entrance' href='/'>
         <i className='twa twa-2x twa-houses'/>
+      </a>:<></>}
+
+      {location.pathname!='/'?<a title='Go Back' className='hover:cursor-pointer' onClick={()=>navigate(-1)}>
+        <i className='twa twa-2x twa-back-arrow'/>
       </a>:<></>}
 
       {location.pathname!='/inventory'?<a title='Open Inventory' href='/inventory'>

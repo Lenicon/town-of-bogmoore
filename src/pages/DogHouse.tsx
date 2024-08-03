@@ -4,6 +4,7 @@ import useSound from 'use-sound';
 import dogSound from '../assets/sounds/dogSounds.mp3';
 import { getStatus, removeStatus, setStatus } from '../services/manageStatus';
 import { addItem, getItem, subItem } from '../services/manageInventory';
+import { delayedAlert } from '../services/useful';
 
 export default function Doghouse() {
 
@@ -33,20 +34,46 @@ export default function Doghouse() {
     }
   }, [dogState]);
 
+  useEffect(()=>{
+    if (getStatus('boneThief')) {
+      delayedAlert('You hear crying inside the hut...');
+    }
+  }, []);
+
   const handleBone = () => {
     let boneGone = getStatus('boneGone');
+    let boneThief = getStatus('boneThief');
     switch (dogState) {
       case 0:
         if (!boneGone) {
+          
+          if (boneThief && getItem('apologyLetter')){
+            alert('You handed an Apology Letter.');
+            alert("Cappuccino may have forgiven you, but she still hates you.");
+            setStatus('boneThief', false);
+            return subItem('apologyLetter', 1);
+          }
+
+          alert('You took the Bone.');
+          
+          if (!getStatus('boneThief')){
+            alert('You have become a "Bone Thief".')
+            setStatus('boneThief', true);
+          }
           addItem('cappuccinoBone', 1);
           setStatus('boneGone', true);
-          setStatus('boneThief', true);
+          
         } else if (boneGone && getItem('cappuccinoBone')) {
           setStatus('boneGone', false);
+
+          alert('You returned the Bone.')
           if(getItem('apologyLetter')){
+            alert('You handed an Apology Letter.');
+            alert("Cappuccino may have forgiven you, but she still hates you...");
             setStatus('boneThief', false);
             subItem('apologyLetter', 1);
           };
+
           subItem('cappuccinoBone', 1);
         }
 
@@ -61,7 +88,7 @@ export default function Doghouse() {
     <div className='select-none m-auto'>
       <TopBar />
 
-      <div id='bg' className='grass-bg w-screen h-screen fixed -z-[5]' onMouseOver={() => setDogState(0)} />
+      <div id='bg' className='bg-doghouse w-screen h-screen fixed -z-[5]' onMouseOver={() => setDogState(0)} />
 
       <i id='hut' className='twa twa-hut text-[20rem] fixed-center-emoji -translate-x-[60%] -translate-y-[110%] z-[1]' />
 

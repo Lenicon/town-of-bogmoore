@@ -29,13 +29,6 @@ html,body
   padding: 0;
 }
 
-.grass-bg {
-  background: linear-gradient(45deg , #f7f3d3 10%,transparent 11%, transparent 89% , #f7f3d3 90%),linear-gradient(135deg , #f7f3d3 10%,transparent 11%, transparent 89% , #f7f3d3 90%),radial-gradient(circle, transparent 25%, #ffffff  26%),linear-gradient(0deg, transparent 44%, #f7f3d3 45%, #f7f3d3 55%, transparent 56%), linear-gradient(90deg, transparent 44%, #f7f3d3 45%, #f7f3d3 55%, transparent 56%);
-        background-size: 6em 6em;
-        background-color: #ffffff;
-        opacity: 1
-}
-
 .fixed-center {
   position: fixed;
   top: 50vh;
@@ -51,4 +44,42 @@ html,body
 
 a {
   text-decoration-line: underline;
+}
+
+
+/* BACKGROUNDS */
+
+.bg-home {
+  background: linear-gradient(45deg , #fff6b6 10%,transparent 11%, transparent 89% , #f7f3d3 90%),linear-gradient(135deg , #f7f3d3 10%,transparent 11%, transparent 89% , #f7f3d3 90%),radial-gradient(circle, transparent 25%, #ffffff  26%),linear-gradient(0deg, transparent 44%, #f7f3d3 45%, #f7f3d3 55%, transparent 56%), linear-gradient(90deg, transparent 44%, #f7f3d3 45%, #f7f3d3 55%, transparent 56%);
+  background-size: 6em 6em;
+  background-color: #ffffff;
+  opacity: 1
+}
+
+.bg-doghouse {
+  background: linear-gradient(45deg, #cdecc580 25%, transparent 21%) , linear-gradient(315deg, #cdecc580 25%, transparent 21%), linear-gradient(45deg, #cdecc5 10%, transparent 11%), linear-gradient(315deg, #cdecc5 10%, transparent 11%),linear-gradient(135deg, #cdecc580 25%, transparent 21%) , linear-gradient(225deg, #cdecc580 25%, transparent 21%), linear-gradient(135deg, #cdecc5 10%, transparent 11%), linear-gradient(225deg, #cdecc5 10%, transparent 11%), radial-gradient(#cdecc5 20%, transparent 21%);
+  background-size: 6em 6em;
+  background-color: #f7ffe9;
+  opacity: 1
+}
+
+.bg-inventory{
+  background: linear-gradient(45deg, #f7e7df 10%,transparent 10%,transparent 90%,#f7e7df 90%),linear-gradient(135deg, transparent 40%, #f7e7df80 40%, #f7e7df80 60%, transparent 0),linear-gradient(45deg, transparent 40%, #f7e7df 40%, #f7e7df 60%, transparent 0);
+  background-size: 5em 5em;
+  background-color: #ffffff;
+  opacity: 1
+}
+
+.bg-shop {
+  background: linear-gradient(45deg, #d4f3e580 25%, transparent 21%) , linear-gradient(315deg, #d4f3e580 25%, transparent 21%), linear-gradient(45deg, #d4f3e5 10%, transparent 11%), linear-gradient(315deg, #d4f3e5 10%, transparent 11%),linear-gradient(135deg, #d4f3e580 25%, transparent 21%) , linear-gradient(225deg, #d4f3e580 25%, transparent 21%), linear-gradient(135deg, #d4f3e5 10%, transparent 11%), linear-gradient(225deg, #d4f3e5 10%, transparent 11%), radial-gradient(#d4f3e5 20%, transparent 21%);
+  background-size: 5em 5em;
+  background-color: #ffffff;
+  opacity: 1
+}
+
+.bg-shrine {
+  background: linear-gradient(-45deg, #f3e6b099 20%, transparent 20% 80%, #f3e6b099 80% 100%), linear-gradient(45deg, #f3e6b099 20%, transparent 20% 80%, #f3e6b099 80% 100%), linear-gradient(-45deg, #ffffff 33%, transparent 33% 66%, #ffffff 66%), linear-gradient(45deg, transparent 33%, #f3e6b0 33% 66%, transparent 66%);
+  background-size: 4em 4em;
+  background-color: #ffffff;
+  opacity: 1
 }

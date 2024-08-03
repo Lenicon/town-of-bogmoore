@@ -1,12 +1,13 @@
 import secureLocalStorage from "react-secure-storage";
 import { v4 as getID } from 'uuid';
+import {format as fnsformat} from 'date-fns';
 
 export const initialize = () => {
   if (secureLocalStorage.getItem('stat') == null || secureLocalStorage.getItem('stat') == undefined) {
     secureLocalStorage.setItem('stat', { secretID: getID(), startDate: new Date(), currentDate: new Date() });
   }
 
-  if (getStatus('currentDate') != new Date()){
+  if (fnsformat(new Date(getStatus('currentDate')), 'MMM dd yyyy') != fnsformat(new Date(), 'MMM dd yyyy')){
     secureLocalStorage.setItem('currentDate', new Date());
   }
 

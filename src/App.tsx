@@ -1,10 +1,8 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 import Home from "./pages/Home"
-import Doghouse from "./pages/DogHouse"
 import Test from "./pages/Test"
 import Inventory from "./pages/Inventory"
-import Shop from "./pages/Shop"
-import Shrine from "./pages/Shrine"
+import { placesObj } from "./config/townSettings"
 
 export default function App() {
   return (
@@ -13,9 +11,9 @@ export default function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/inventory" element={<Inventory/>}/>
         
-        <Route path="/doghouse" element={<Doghouse/>}/>
-        <Route path="/shop" element={<Shop/>}/>        
-        <Route path="/shrine" element={<Shrine/>}/>        
+        {Object.keys(placesObj).filter(t=>!t.startsWith('!')||!t.startsWith('?')).map(key=>(
+          <Route key={key} path={key} element={placesObj[key]?.route||<Home/>}/>
+        ))}  
 
         <Route path="/test" element={<Test/>}/>
         <Route path="*" element={<Navigate to='/' replace/>}/>
