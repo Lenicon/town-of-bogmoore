@@ -22,7 +22,7 @@ export const placesObj:any = {
 
   "general-store":{title:"8-Five Store", icon:"convenience-store", route:<Store/>},
   "?library":{title:"Library", icon:"school", route:null},
-  "post-office":{title:"Post Office", icon:"japanese-post-office", route:<PostOffice/>},
+  "?post-office":{title:"Post Office", icon:"japanese-post-office", route:<PostOffice/>},
 
   "?tailor":{title:"Siany's Thread", icon:"sewing-needle", route:null},
   "?fly-chamber":{title:"Fly Chamber", icon:"bank", route:null},
