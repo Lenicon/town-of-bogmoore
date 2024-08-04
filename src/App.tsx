@@ -11,9 +11,9 @@ export default function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/inventory" element={<Inventory/>}/>
         
-        {Object.keys(placesObj).filter(t=>!t.startsWith('!')||!t.startsWith('?')).map(key=>(
+        {Object.keys(placesObj).filter(t=>!t.startsWith('!')||!t.startsWith('?')||placesObj[t].route!=null).map(key=>(
           <Route key={key} path={key} element={placesObj[key]?.route||<Home/>}/>
-        ))}  
+        ))}
 
         <Route path="/test" element={<Test/>}/>
         <Route path="*" element={<Navigate to='/' replace/>}/>

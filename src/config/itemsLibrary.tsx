@@ -2,6 +2,9 @@ import * as inv from '../services/manageInventory';
 import * as coin from '../services/manageCoins';
 import { random } from '../services/random';
 
+/*
+    ITEMS LIBRARY - WHERE EVERYTHING IS.
+*/
 
 export const itemlib: any = {
   'cappuccinoBone': { name: 'Bone', sell: 20, buy: 15, desc: `A Special Bone with Cappuccino's scent.`, icon: 'bone' },
@@ -15,13 +18,13 @@ export const itemlib: any = {
       if (sorrymatch != null && sorrymatch != undefined) {
         inv.addItem('apologyLetter', 1);
       }
-      else if (final.startsWith('/fly ') && localStorage.getItem('mode') == 'test') {
+      else if (final.startsWith('/fly ') && localStorage.getItem(import.meta.env.VITE_ADMIN_USERNAME) == import.meta.env.VITE_ADMIN_PASSWORD) {
         let arg = final.replace('/fly ', '').trim();
         console.log(arg);
         if (arg == '' || !Number(arg)) return;
         coin.addCoins(Number(arg));
       }
-      else if (write.startsWith('/give ') && localStorage.getItem('mode') == 'test') {
+      else if (write.startsWith('/give ') && localStorage.getItem(import.meta.env.VITE_ADMIN_USERNAME) == import.meta.env.VITE_ADMIN_PASSWORD) {
         let arg = write.replace('/give ', '').trim().split(' ');
         console.log(arg);
         if (arg[0] == '' || !itemlib[arg[0]]) return;
@@ -44,7 +47,7 @@ export const itemlib: any = {
 
   'mysteryGift': {
     name: 'Mystery Gift', sell: 30, desc: "Open it! I wonder what's inside...", icon: 'wrapped-gift', use: function use() {
-      let keys = Object.keys(itemlib).filter(value => value != 'mysteryGift');
+      let keys = Object.keys(itemlib).filter(value => !['mysteryGift', 'cappuccinoBone'].includes(value));
       let item = keys[random(keys.length)];
 
       inv.addItem(item, 1);

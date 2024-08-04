@@ -1,6 +1,6 @@
 
 import TopBar from "../components/TopBar";
-import { placesObj, POLicons } from "../config/townSettings";
+import { placesObj, POLicons, startingTxt } from "../config/townSettings";
 import { random } from "../services/random";
 
 
@@ -12,7 +12,7 @@ export default function Home() {
 
       <div id='bg' className='bg-home w-screen h-screen fixed -z-[5]' />
 
-      <div id='shopkeeper' className='w-screen h-screen fixed -z-[4] top-[51vh] left-[75vw]'>
+      <div id='len' className='w-screen h-screen fixed -z-[4] top-[77vh] left-[88vw] origin-top-left scale-50'>
         <i id='body' className='twa twa-technologist text-[20rem] leading-none absolute' />
         <i id='head' className='twa twa-frog text-[17rem] absolute left-[4rem] -top-[3rem]'>
           <i id='eyebrow' className='bg-[#77B255] h-5 w-[3.8rem] rounded-b-full absolute left-[11.5rem] top-[4rem]' />
@@ -21,9 +21,9 @@ export default function Home() {
       </div>
 
 
-      <div id='title' className='text-center items-center flex flex-col justify-center pt-[3rem]'>
-        <span className='text-xl'>Hi, wanna see something nice?</span>
-        <span className='text-2xl'>Welcome to the <strong>Town of Bogmoore</strong></span>
+      <div id='title' className='text-center items-center flex flex-col justify-center md:pt-[3rem] pt-[5rem]'>
+        <span className='text-xl'>{startingTxt[random(startingTxt.length)]}</span>
+        <span className='text-2xl'>Welcome to the <strong>Town of Bogmoore</strong>!</span>
       </div>
 
       <div className='flex flex-wrap justify-center items-center gap-5 text-center lg:mx-[10rem] md:mx-20'>

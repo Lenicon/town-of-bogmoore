@@ -24,6 +24,11 @@ licensed under MIT: https://ellekasai.mit-license.org/
     background-size: 1em 1em;
 }
 
+.twa > p {
+    position: relative;
+    z-index: -1;
+}
+
 .twa-lg {
     height: 1.33em;
     width: 1.33em;

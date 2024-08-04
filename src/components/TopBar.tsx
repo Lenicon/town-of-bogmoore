@@ -26,17 +26,17 @@ export default function TopBar() {
 
 
   return (
-    <div className='flex flex-row gap-3 select-none fixed top-5 right-7'>
+    <div className='flex flex-row gap-3 select-none fixed top-5 right-7 z-50'>
       {location.pathname!='/'?<a title='Go to Entrance' href='/'>
-        <i className='twa twa-2x twa-houses'/>
+        <i className='twa twa-2x twa-houses'><p className='text-[1.3rem]'>🏘️</p></i>
       </a>:<></>}
 
       {location.pathname!='/'?<a title='Go Back' className='hover:cursor-pointer' onClick={()=>navigate(-1)}>
-        <i className='twa twa-2x twa-back-arrow'/>
+        <i className='twa twa-2x twa-back-arrow bg-gray-100 rounded-sm'><p className='text-[1.3rem]'>🔙</p></i>
       </a>:<></>}
 
       {location.pathname!='/inventory'?<a title='Open Inventory' href='/inventory'>
-        <i className='twa twa-2x twa-backpack'/>
+        <i className='twa twa-2x twa-backpack'><p className='text-[1.3rem]'>🎒</p></i>
       </a>:<></>}
 
       <CoinDisplay coin={coin}/>

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import TopBar from '../components/TopBar';
 import useSound from 'use-sound';
 import dogSound from '../assets/sounds/dogSounds.mp3';
-import { getStatus, removeStatus, setStatus } from '../services/manageStatus';
+import { getStatus, setStatus } from '../services/manageStatus';
 import { addItem, getItem, subItem } from '../services/manageInventory';
 import { delayedAlert } from '../services/useful';
 

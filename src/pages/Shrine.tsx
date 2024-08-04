@@ -63,15 +63,16 @@ export default function Shrine() {
   const donate = () => {
     let prompt = window.prompt(`"We would be delighted to receive a donation..."`, '1');
     let amount = Number(prompt)
-    if (!amount || amount < 1) return alert('"Please come again..."');
+    if (!amount || amount < 1 || amount > coin.getCoins()) return alert('"Please come again..."');
     
     if(amount > 0 && amount < 6) alert('"We thank you for your donation..."');
     else if(amount > 5 && amount < 11) alert('"We thank you for your kind donation..."');
     else if(amount > 10 && amount < 21) alert('"We thank you for your generous donation!"');
     else if(amount > 20 && amount < 51) alert('"We sincerely thank you for your most generous donation!!"');
-    else if(amount > 50 && amount < 1000) alert('"WE DEEPLY THANK YOU FOR YOUR SOULFUL AND MOST GENEROUS DONATION!!!"');
-    else if(amount > 1000) alert('"THANK YOU!! WE DEEPLY AND SINCERELY THANKFUL FOR YOUR SOULFUL AND HEARTFELT DONATION WITH OUTMOST GENEROSITY!! THANK YOU SO MUCH!!"');;
+    else if(amount > 50 && amount < 1000) alert('" OH AMPHI! WE DEEPLY THANK YOU FOR YOUR SOULFUL AND MOST GENEROUS DONATION!!!"');
+    else if(amount > 1000) alert('"OH HOLY AMPHI! THANK YOU!! WE DEEPLY AND SINCERELY THANKFUL FOR YOUR SOULFUL AND HEARTFELT DONATION WITH OUTMOST GENEROSITY!! THANK YOU SO MUCH!!"');;
     
+    return coin.subCoins(amount);
 
   }
 
@@ -81,16 +82,16 @@ export default function Shrine() {
 
       <div id='bg' className='bg-shrine w-screen h-screen fixed -z-[5]' />
 
-      <div id='shrinekeeper' className='w-screen h-screen fixed -z-[4] top-[51vh] left-[75vw]'>
-        <i id='body' className='twa twa-woman-bowing text-[20rem] leading-none absolute' />
+      <div id='shrinekeeper_R' className='w-screen h-screen fixed -z-[4] top-[51vh] left-[75vw]'>
+        <i id='body' className='twa twa-woman-bowing-medium-skin-tone text-[20rem] leading-none absolute' />
         <i id='head' className='twa twa-frog text-[17rem] absolute left-[2rem] -top-[1rem]'>
           <i id='eyebrow' className='bg-[#77B255] h-[3.2rem] w-[4rem] rounded-full absolute left-[11.45rem] top-[1.6rem]' />
           <i id='eyebrow' className={`bg-[#77B255] h-[3.2rem] w-[4rem] rounded-full absolute left-[1.55rem] top-[1.6rem]`} />
         </i>
       </div>
 
-      <div id='shrinekeeper' className='w-screen h-screen fixed -z-[4] top-[51vh] right-10'>
-        <i id='body' className='twa twa-man-bowing text-[20rem] leading-none absolute' />
+      <div id='shrinekeeper_L' className='w-screen h-screen fixed -z-[4] top-[51vh] right-10'>
+        <i id='body' className='twa twa-man-bowing-light-skin-tone text-[20rem] leading-none absolute' />
         <i id='head' className='twa twa-frog text-[17rem] absolute left-[2rem] -top-[1rem]'>
           <i id='eyebrow' className='bg-[#77B255] h-[3.2rem] w-[4rem] rounded-full absolute left-[11.45rem] top-[1.6rem]' />
           <i id='eyebrow' className={`bg-[#77B255] h-[3.2rem] w-[4rem] rounded-full absolute left-[1.55rem] top-[1.6rem]`} />

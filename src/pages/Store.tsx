@@ -57,7 +57,7 @@ export default function Store() {
       <div id='bg' className='bg-shop w-screen h-screen fixed -z-[5]' />
 
       <div id='shopkeeper' className='w-screen h-screen fixed -z-[4] top-[20vh] left-[47.5vw]'>
-        <i id='body' className='twa twa-man-standing text-[50rem] leading-none absolute' />
+        <i id='body' className='twa twa-man-standing-dark-skin-tone text-[50rem] leading-none absolute' />
         <i id='head' className='twa twa-frog text-[13.5rem] absolute left-[22rem] -top-[1.4rem]'>
           <i id='eyebrow' className='bg-[#77B255] h-5 w-[2.8rem] rounded-t-full absolute left-[9.4rem] top-[1.3rem]' />
           <i id='eyebrow' className={`bg-[#77B255] h-5 w-[2.8rem] rounded-t-full absolute left-[1.4rem] ${shopkeeperState == 0 ? 'top-[1.3rem]' : 'top-[1rem]'}`} />
