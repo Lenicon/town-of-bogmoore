@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+.twa > p {
+  position: relative;
+  z-index: -1;
+}
+
 /* SHIRTS */
 .twa-black-shirt {
   background-image: url('https://raw.githubusercontent.com/gist/Lenicon/0438e39ec46045e886ed90749c27429c/raw/43e8966db0ed6bc5b210835fe60e424e7c593ff1/black-shirt.svg');
